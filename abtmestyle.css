@@ -1,0 +1,509 @@
+/* =========================================================
+   ABOUT PAGE (NEOCITY + WINDOW DESKTOP AESTHETIC)
+   =========================================================
+   I really wanted to go for that MySpace / Carrd / “neo city”
+    style here. I’m naturally a maximalist, so I like layouts 
+    that feel busy, layered, and a bit chaotic in a controlled 
+    way instead of super minimal designs.
+
+   Inspired by:
+   - Windows / IE style UI
+   - scrapbook journaling layouts
+   - neocities
+
+   Everything is arranged like open “windows” of memories.
+========================================================= */
+
+
+/* RESET (keeps spacing consistent across all browsers) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* BODY (soft neutral base so content layers stand out more) */
+body {
+    font-family: 'Tahoma', 'Geneva', sans-serif;
+    overflow: hidden;
+    background-color: #f4f1ec; /* softer scrapbook background tone */
+}
+
+
+/* SITE WRAPPER (holds sidebar + main content layout structure) */
+.site-wrapper {
+    display: flex;
+    height: 100vh;
+}
+
+
+/* =========================
+   SIDEBAR NAVIGATION
+   (fixed navigation so it always stays visible like a desktop dock)
+========================= */
+.sidebar {
+    width: 110px;
+    background-color: #d81b60;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    justify-content: flex-start;
+    position: fixed;
+    height: 100vh;
+    z-index: 100;
+}
+
+
+/* LOGO AREA (top branding element inside sidebar) */
+.logo-top {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
+/* LOGO IMAGE (kept small so it feels like UI icon) */
+.star-logo {
+    width: 75px;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* NAV LINKS WRAPPER (stacks navigation buttons vertically) */
+.nav-links {
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* NAV ITEM (buttons styled like playful UI tabs) */
+.nav-item {
+    background: linear-gradient(135deg, #b2ff59, #64ffda);
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    width: 88%;
+    margin: 0 auto;
+    border-radius: 18px;
+    border: 2px solid #ffffff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+
+/* NAV SPACING FIX (separates grouped navigation sections) */
+.nav-item:nth-child(3) {
+    margin-top: 35px;
+}
+
+
+/* NAV HOVER EFFECT (adds playful interactive feel) */
+.nav-item:hover {
+    transform: scale(1.1) rotate(-1deg);
+    box-shadow: 0 4px 15px rgba(178, 255, 89, 0.4);
+}
+
+
+/* ACTIVE NAV STATE (highlights current page selection clearly) */
+.nav-item.active {
+    border: 3.5px solid #ffffff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   MAIN CONTENT AREA
+   (this is where scrapbook-style windows appear)
+========================= */
+.main-content {
+    flex: 1;
+    height: 100vh;
+    overflow-y: auto;
+    margin-left: 110px;
+    background-image: url('abtmebg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 20px;
+}
+
+
+/* SCROLL CONTAINER (centers all window sections neatly) */
+.scroll-container {
+    max-width: 850px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 50px;
+}
+
+
+/* =========================
+   WINDOW FRAME SYSTEM
+   (each section feels like a draggable desktop window)
+========================= */
+.ie-window-frame {
+    background: #eaeaea;
+    border: 1px solid #000;
+    box-shadow: 6px 6px 0px rgba(0,0,0,0.25);
+}
+
+
+/* TOOLBAR (top bar mimics old operating system windows) */
+.ie-toolbar {
+    background: linear-gradient(90deg, #000080, #1084d0);
+    padding: 3px 8px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+
+/* GREEN TOOLBAR VARIANT (used for visual variety in sections) */
+.green-top {
+    background: linear-gradient(90deg, #2c8e2c, #64c864) !important;
+}
+
+
+/* BLUE TOOLBAR VARIANT (default system window feel) */
+.blue-top {
+    background: linear-gradient(90deg, #000080, #1084d0) !important;
+}
+
+
+/* WINDOW CONTROLS (fake minimize/maximize/close UI buttons) */
+.ie-controls {
+    display: flex;
+    gap: 2px;
+    margin-right: 10px;
+}
+
+.ie-controls span {
+    width: 16px;
+    height: 16px;
+    background: #c0c0c0;
+    border: 1px solid #fff;
+    border-right: 1px solid #444;
+    border-bottom: 1px solid #444;
+    font-size: 9px;
+    text-align: center;
+    line-height: 14px;
+    cursor: pointer;
+}
+
+
+/* WINDOW TITLE (labels each section like a file or folder) */
+.win-label {
+    font-size: 11px;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+}
+
+
+/* INNER CONTENT AREA (actual scrapbook content inside each window) */
+.inner-window-content {
+    padding: 15px;
+    background: white;
+    border: 1px solid #808080;
+    margin: 2px;
+}
+
+
+/* =========================
+   LAYOUT GRIDS
+   (organises content like scrapbook panels)
+========================= */
+.profile-grid {
+    display: grid;
+    grid-template-columns: 180px 1fr 160px;
+    gap: 15px;
+}
+
+
+/* ARCHIVE GRID (balanced two-column layout for visuals + text) */
+.archive-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+
+/* STUDIO LAYOUT (asymmetrical creative layout system) */
+.studio-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 15px;
+}
+
+
+/* MINI IMAGE GRID (small scrapbook collage section) */
+.mini-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+
+/* MINI TILE IMAGE (keeps collage images evenly cropped) */
+.m-tile img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border: 1px solid #808080;
+}
+
+
+/* =========================
+   HEADER LABEL STRIPS
+   (decorative tags that look like scrapbook file tabs)
+========================= */
+.header-strip {
+    padding: 3px 8px;
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    border: 1px solid #ddd;
+}
+
+
+/* COLOURED LABEL VARIANTS (used to visually separate sections) */
+.pink-theme { background: #f8bbd0; }
+.blue-theme { background: #b3e5fc; }
+.green-theme { background: #c8e6c9; }
+.yellow-theme { background: #fff9c4; }
+
+
+/* PROFILE IMAGE BOX (framed portrait style image container) */
+.img-box img {
+    width: 100%;
+    border: 1px solid #808080;
+}
+
+
+/* FEATURE IMAGE (slightly offset to feel scrapbook layered) */
+.big-photo-slot img {
+    width: 70%;
+    margin-left: 50px;
+    border: 1px solid #808080;
+}
+
+
+/* BIO TEXT (kept simple like journal handwriting block) */
+.bio-p {
+    font-size: 12px;
+    line-height: 1.4;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+
+/* INTEREST TAGS (small labels like scrapbook stickers) */
+.interests-tags span {
+    background: #f0f0f0;
+    padding: 2px 6px;
+    border: 1px solid #ccc;
+    font-size: 10px;
+    margin-right: 3px;
+    display: inline-block;
+    margin-bottom: 3px;
+}
+
+
+/* SCRAPBOOK IMAGE (main decorative visual content block) */
+.scrapbook-img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: contain;
+    border: 2px solid #fff;
+}
+
+
+/* =========================
+   MUSIC PLAYER WIDGET
+   (floating personal UI element for atmosphere)
+========================= */
+.music-box-small {
+    margin-top: 15px;
+    text-align: center;
+}
+
+
+/* NOW PLAYING TEXT (small system-style label) */
+.now-playing {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+
+/* ALBUM ART (framed like a media window preview) */
+.album-art img {
+    width: 100%;
+    border: 1px solid #808080;
+    margin-bottom: 8px;
+}
+
+
+/* SONG TITLE (highlighted accent text for media section) */
+.song-title {
+    color: #d81b60;
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+/* MUSIC BUTTONS (fake UI controls for aesthetic consistency) */
+.player-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.player-buttons span {
+    width: 24px;
+    height: 20px;
+    background: #c0c0c0;
+    border: 1px solid #fff;
+    border-right: 1px solid #444;
+    border-bottom: 1px solid #444;
+    font-size: 10px;
+    line-height: 18px;
+    cursor: pointer;
+}
+
+
+/* STATUS BOX (small note-style information panel under profile) */
+.status-box {
+    background: #f9f9f9;
+    border: 1px dashed #bbb;
+    padding: 8px;
+    margin-top: 10px;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+
+/* FUN FACT NOTE (sticky note styled decorative element) */
+.fun-fact-note {
+    background: #ffffcc;
+    border: 1px solid #e6e600;
+    padding: 8px;
+    margin-top: 15px;
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.05);
+}
+
+
+/* NOTE HEADER (small title inside sticky note) */
+.note-head {
+    color: #d32f2f;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 3px;
+}
+
+
+/* FUN FACT TEXT (simple readable note formatting) */
+.fun-fact-note p {
+    font-size: 10px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+
+/* PHOTO STRIP (decorative mini collage row) */
+.sticky-photos {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+
+/* SMALL PHOTO ITEM (like printed scrapbook stickers) */
+.s-photo {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border: 3px solid white;
+}
+
+
+/* VIDEO PLAYER WRAPPER (media section container styling) */
+.vlog-player-container {
+    background: #000;
+    border: 1px solid #444;
+}
+
+
+/* VIDEO HEADER BAR (fake media player top strip) */
+.mp4-header {
+    background: #222;
+    padding: 4px;
+    color: #fff;
+    font-size: 10px;
+}
+
+
+/* VIDEO CONTROLS BAR (media playback interface styling) */
+.player-controls {
+    background: #222;
+    padding: 8px;
+    color: #fff;
+    font-size: 11px;
+}
+
+
+/* PROGRESS BAR (visual playback indicator element) */
+.progress-bar {
+    height: 3px;
+    background: #444;
+    margin-bottom: 5px;
+}
+
+
+/* PROGRESS FILL (shows current playback progress visually) */
+.progress-fill {
+    width: 40%;
+    height: 100%;
+    background: #d81b60;
+}
+
+
+/* SCROLL TEXT AREA (used for long journal-style writing blocks) */
+.scrollable-text {
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 5px;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+
+/* CAPTION TEXT (small descriptive text under images or media) */
+.caption {
+    font-size: 10px;
+    text-align: center;
+    margin-top: 5px;
+    font-style: italic;
+    color: #666;
+}

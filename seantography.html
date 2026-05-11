@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <!-- keeps layout responsive across devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Photography - Sean Lao</title>
+
+    <!-- page-specific styling for this photography layout -->
+    <link rel="stylesheet" href="seantographystyle.css">
+
+</head>
+
+<body>
+
+    <!-- main wrapper (sidebar + page content structure) -->
+    <div class="site-wrapper">
+
+        <!-- sidebar navigation (same across portfolio) -->
+        <aside class="sidebar">
+
+            <!-- logo / branding -->
+            <div class="logo-top">
+                <img src="logologo.png" alt="Logo" class="star-logo">
+            </div>
+
+            <!-- navigation links -->
+            <nav class="nav-links">
+                <a href="seanportfolio.html" class="nav-item">Home</a>
+                <a href="abtme.html" class="nav-item">About</a>
+                <a href="seantography.html" class="nav-item active">Photography</a>
+                <a href="myart.html" class="nav-item">Art</a>
+                <a href="business.html" class="nav-item">Business</a>
+                <a href="scrapbook.html" class="nav-item">Scrapbooking</a>
+            </nav>
+
+        </aside>
+
+        <!-- top system-style bar (clock + audio control) -->
+        <div class="top-system-bar">
+
+            <!-- live clock display -->
+            <div class="system-clock" id="clock">00:00:00</div>
+
+            <!-- background audio control -->
+            <div class="system-sound-widget">
+
+                <p class="sound-label">SYSTEM_AUDIO</p>
+
+                <audio id="bg-audio" loop>
+                    <source src="seantographystuff/hmcpianoinstrumental.mp3" type="audio/mpeg">
+                </audio>
+
+                <button onclick="toggleSound()" id="sound-btn">🔈 OFF</button>
+
+            </div>
+        </div>
+
+        <!-- floating mac-style info widget -->
+        <div class="mac-widget">
+
+            <div class="mac-header">
+
+                <div class="mac-buttons">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+
+                <span class="mac-title">System Information: Sean Lao</span>
+
+            </div>
+
+            <div class="mac-body">
+
+                <!-- profile section -->
+                <div class="profile-section">
+
+                    <img src="seantographypics/pfpphotography.png"
+                         alt="Sean Lao"
+                         class="profile-pic">
+
+                    <div class="bio-text">
+                        <h3>Sean Lao</h3>
+                        <p>1st Year Computing Student</p>
+                    </div>
+
+                </div>
+
+                <hr class="divider">
+
+                <!-- short personal statement -->
+                <div class="passion-section">
+
+                    <h4>Why I love photography</h4>
+
+                    <p>
+                        Photography is basically how I freeze moments I don't want to forget.
+                        It's less about perfect shots and more about capturing something that feels real.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- main photography workspace -->
+        <main class="main-content photography-bg">
+
+            <div class="window-container">
+
+                <!-- small warning / system note -->
+                <div class="system-note">
+
+                    <p class="note-head">! QUICK TIP !</p>
+                    <p>Tap the files to view the photo sets.</p>
+                    <p>don't click the recycle bin unless you're curious.</p>
+
+                </div>
+
+                <!-- main visual mockup frame -->
+                <img src="seantographystuff/filestab.png"
+                     alt="File Window"
+                     class="mockup-frame">
+
+                <!-- clickable photo project buttons -->
+                <div class="button-overlay">
+
+                    <a href="seantographys1.html" class="photo-btn">
+                        <img src="seantographystuff/filedocumenticon.png" alt="Gallery 1">
+                        <span>Project_01.jpg</span>
+                    </a>
+
+                    <a href="seantographys2.html" class="photo-btn">
+                        <img src="seantographystuff/filedocumenticon.png" alt="Gallery 2">
+                        <span>Project_02.jpg</span>
+                    </a>
+
+                </div>
+
+                <!-- recycle bin interaction (jumpscare feature) -->
+                <div class="recycle-bin" id="recycle-bin-btn">
+
+                    <img src="appicons/seantographyapp.png" alt="Recycle Bin">
+                    <span>Recycle Bin</span>
+
+                </div>
+
+            </div>
+
+            <!-- bottom system status ticker -->
+            <footer class="system-status-bar">
+
+                <marquee scrollamount="4">
+                    SYSTEM ACTIVE // SEANTOGRAPHY V2.0 // LATEST IMPORT: 6 PHOTOS // STATUS: BORED... (;´༎ຶД༎ຶ`)
+                </marquee>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+    <!-- popup modal (recycle bin surprise feature) -->
+    <div id="trash-modal" class="modal-overlay" onclick="closeModal()">
+
+        <div class="modal-content" onclick="event.stopPropagation()">
+
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+
+            <img src="seantographypics/surprisethew.png" alt="Curious?">
+
+        </div>
+
+    </div>
+
+    <!-- script handles audio + clock + recycle bin interaction -->
+    <script>
+
+        const audio = document.getElementById('bg-audio');
+
+        function toggleSound() {
+            if (audio.paused) {
+                audio.play();
+                document.getElementById('sound-btn').innerText = "🔊 ON";
+            } else {
+                audio.pause();
+                document.getElementById('sound-btn').innerText = "🔈 OFF";
+            }
+        }
+
+        function updateClock() {
+            const now = new Date();
+            document.getElementById('clock').innerText = now.toLocaleTimeString();
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        const recycleBin = document.getElementById('recycle-bin-btn');
+        const modal = document.getElementById('trash-modal');
+
+        recycleBin.onclick = () => modal.style.display = 'flex';
+
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,386 @@
+/* =========================================================
+   MACOS-INSPIRED PHOTOGRAPHY PORTFOLIO PAGE
+   =========================================================
+   This layout is inspired by macOS desktop design aesthetics.
+
+   I built it this way because it reflects my personal creative style
+   and feels closest to how I naturally organize visual ideas.
+
+   I also learned and refined this layout through multiple YouTube tutorials,
+   experimenting until it matched my intended aesthetic and flow.
+
+   The goal is to combine a realistic desktop feel with interactive portfolio elements.
+========================================================= */
+
+
+/* GLOBAL RESET
+   Standardises spacing so layout behaves consistently across browsers */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+/* BASE PAGE STYLING
+   Simple system font keeps interface clean and readable */
+body { 
+    font-family: 'Tahoma', sans-serif; 
+    overflow: hidden; 
+}
+
+/* MAIN WRAPPER
+   Holds sidebar and main content in flexible desktop layout */
+.site-wrapper { 
+    display: flex; 
+    min-height: 100vh; 
+}
+
+
+/* SIDEBAR NAVIGATION
+   Fixed macOS-style launcher for consistent page navigation */
+.sidebar {
+    width: 110px; 
+    background-color: #d81b60; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 5px;
+    justify-content: flex-start; 
+    position: fixed;
+    height: 100vh;
+    z-index: 100;
+}
+
+/* NAV LINKS CONTAINER
+   Organises navigation buttons vertically with spacing */
+.nav-links { 
+    width: 100%; 
+    margin-top: 40px; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px; 
+}
+
+/* NAV ITEM BUTTONS
+   Bright interactive buttons inspired by app launcher icons */
+.nav-item {
+    background: linear-gradient(135deg, #b2ff59, #64ffda); 
+    color: white; 
+    text-decoration: none; 
+    font-size: 11px; 
+    font-weight: 800;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    height: 36px; 
+    width: 88%; 
+    margin: 0 auto; 
+    border-radius: 18px; 
+    border: 2px solid #ffffff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.15); 
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-align: center;
+}
+
+/* NAV SPACING ADJUSTMENT
+   Adds visual separation between grouped navigation items */
+.nav-item:nth-child(3) { margin-top: 35px; }
+
+/* NAV HOVER EFFECT
+   Adds playful motion and depth when hovering */
+.nav-item:hover { 
+    transform: scale(1.1) rotate(-1deg); 
+    box-shadow: 0 4px 15px rgba(178, 255, 89, 0.4); 
+}
+
+/* ACTIVE PAGE STATE
+   Highlights current section for user orientation */
+.nav-item.active { 
+    border: 3.5px solid #ffffff; 
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); 
+    transform: scale(1.05); 
+}
+
+/* LOGO SIZE
+   Keeps branding element compact and readable */
+.star-logo { width: 80px; }
+
+
+/* PHOTOGRAPHY BACKGROUND AREA
+   Desktop wallpaper-style background for immersive feel */
+.photography-bg { 
+    flex: 1; 
+    margin-left: 110px; 
+    background-image: url('seantographystuff/photographybg.png'); 
+    background-size: cover; 
+    background-position: center;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh;
+}
+
+/* WINDOW CONTAINER
+   Centers mock desktop window for portfolio interaction */
+.window-container { 
+    position: relative; 
+    width: 85%; 
+    max-width: 1000px; 
+    margin-left: 140px; 
+}
+
+/* MOCK WINDOW FRAME
+   Simulates macOS-style window with depth and shadow */
+.mockup-frame { 
+    width: 100%; 
+    border-radius: 12px; 
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3); 
+}
+
+/* BUTTON OVERLAY AREA
+   Floating interactive buttons placed over mock desktop */
+.button-overlay { 
+    position: absolute; 
+    top: 20%; 
+    left: 20%; 
+    display: flex; 
+    gap: 70px; 
+}
+
+/* PHOTO BUTTON LINKS
+   Clickable icons acting like desktop shortcuts */
+.photo-btn { 
+    width: 90px; 
+    text-decoration: none; 
+    text-align: center; 
+    transition: 0.2s; 
+}
+
+/* PHOTO BUTTON HOVER
+   Slight zoom gives interactive desktop feel */
+.photo-btn:hover { transform: scale(1.1); }
+
+/* PHOTO ICON IMAGE
+   Keeps icons consistent and visually clean */
+.photo-btn img { width: 100%; }
+
+/* PHOTO LABEL TEXT
+   Caption styled like macOS desktop icon labels */
+.photo-btn span { 
+    display: block; 
+    font-size: 11px; 
+    margin-top: 5px; 
+    color: #333; 
+    font-weight: bold; 
+    background: rgba(255,255,255,0.7); 
+    border-radius: 3px; 
+}
+
+
+/* RECYCLE BIN ICON
+   Decorative desktop element for realism and theme */
+.recycle-bin { 
+    position: fixed; 
+    top: 15%; 
+    left: 140px; 
+    width: 60px; 
+    text-align: center; 
+    cursor: pointer; 
+    color: white; 
+    font-size: 10px; 
+    z-index: 400; 
+}
+
+/* BIN IMAGE SHADOW
+   Adds depth so icon blends with desktop environment */
+.recycle-bin img { 
+    width: 100%; 
+    filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.5)); 
+}
+
+
+/* MAC STYLE INFO WIDGET
+   Small profile card inspired by macOS widgets */
+.mac-widget {
+    position: fixed;
+    bottom: 60px;
+    left: 130px; 
+    width: 310px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    z-index: 300;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+/* WIDGET HEADER
+   Top bar mimics macOS window controls */
+.mac-header { 
+    background: #e0e0e0; 
+    padding: 10px; 
+    display: flex; 
+    align-items: center; 
+    border-top-left-radius: 12px; 
+    border-top-right-radius: 12px; 
+}
+
+/* MAC BUTTON DOTS
+   Classic red, yellow, green window controls */
+.mac-buttons { 
+    display: flex; 
+    gap: 6px; 
+    margin-right: 15px; 
+}
+
+/* TRAFFIC LIGHT DOTS
+   Visual window control indicators */
+.dot { width: 12px; height: 12px; border-radius: 50%; }
+.red { background: #ff5f56; } 
+.yellow { background: #ffbd2e; } 
+.green { background: #27c93f; }
+
+/* WIDGET TITLE
+   Small label identifying system window */
+.mac-title { font-size: 11px; font-weight: bold; color: #555; }
+
+/* WIDGET BODY CONTENT
+   Holds profile and description content */
+.mac-body { padding: 20px; }
+
+/* PROFILE SECTION
+   Displays portrait and bio side-by-side */
+.profile-section { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+    margin-bottom: 15px; 
+}
+
+/* PROFILE IMAGE
+   Circular portrait styled like macOS user avatar */
+.profile-pic { 
+    width: 75px; 
+    height: 75px; 
+    border-radius: 50%; 
+    border: 3px solid #d81b60; 
+    object-fit: cover; 
+    flex-shrink: 0; 
+}
+
+/* BIO TEXT BLOCK
+   Name and description stacked vertically */
+.bio-text h3 { font-size: 16px; color: #333; }
+.bio-text p { font-size: 11px; color: #777; }
+
+/* DIVIDER LINE
+   Separates profile from passion section cleanly */
+.divider { border: 0; border-top: 1px solid #ddd; margin: 10px 0; }
+
+/* PASSION SECTION
+   Short reflective text about creative interests */
+.passion-section h4 { font-size: 13px; color: #d81b60; margin-bottom: 5px; }
+.passion-section p { font-size: 12px; color: #444; line-height: 1.4; font-style: italic; }
+
+
+/* STICKY NOTE ELEMENT
+   Decorative note adds personality to desktop layout */
+.system-note { 
+    position: absolute; 
+    bottom: 100px;
+    right: -45px;
+    background: #ffffcc; 
+    border: 1px solid #e6e600; 
+    padding: 10px; 
+    width: 130px; 
+    transform: rotate(-2deg);
+    z-index: 600; 
+    font-size: 10px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+    animation: float 4s ease-in-out infinite;
+}
+
+/* FLOAT ANIMATION
+   Gives sticky note subtle floating movement */
+@keyframes float { 
+    0%, 100% { transform: rotate(-2deg) translateY(0px); } 
+    50% { transform: rotate(-2deg) translateY(-8px); } 
+}
+
+
+/* SYSTEM STATUS BAR
+   Bottom bar mimics macOS system indicators */
+.system-status-bar { 
+    position: fixed; 
+    bottom: 0; 
+    left: 110px; 
+    width: calc(100% - 110px); 
+    background: #000; 
+    color: #b2ff59; 
+    padding: 6px 0; 
+    border-top: 2px solid #d81b60; 
+}
+
+/* TOP SYSTEM INFO BAR
+   Floating system indicators for realism */
+.top-system-bar { 
+    position: fixed; 
+    top: 20px; 
+    right: 20px; 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    z-index: 1000; 
+}
+
+/* CLOCK DISPLAY
+   Digital-style system time indicator */
+.system-clock { 
+    color: #b2ff59; 
+    font-family: monospace; 
+    background: rgba(0,0,0,0.6); 
+    padding: 5px 10px; 
+    border: 1px solid #b2ff59; 
+}
+
+
+/* MODAL OVERLAY
+   Fullscreen popup effect for interactive surprise element */
+.modal-overlay { 
+    display: none; 
+    position: fixed; 
+    top: 0; left: 0; 
+    width: 100%; height: 100%; 
+    background: rgba(0,0,0,0.95); 
+    z-index: 9999; 
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column;
+}
+
+/* SCARY IMAGE ANIMATION
+   Adds glitch-like shake effect for dramatic interaction */
+.scare-img { 
+    max-width: 70%; 
+    border: 10px solid #ff0000; 
+    animation: shake 0.2s infinite; 
+}
+
+/* SHAKE EFFECT
+   Rapid movement simulates glitch or alarm effect */
+@keyframes shake { 
+    0% { transform: translate(1px, 1px) rotate(0deg); } 
+    10% { transform: translate(-1px, -2px) rotate(-1deg); } 
+    20% { transform: translate(-3px, 0px) rotate(1deg); } 
+}
+
+/* CLOSE BUTTON
+   Allows user to exit modal overlay */
+.close-btn { 
+    position: absolute; 
+    top: 20px; 
+    right: 40px; 
+    font-size: 50px; 
+    color: #ff0000; 
+    cursor: pointer; 
+}   

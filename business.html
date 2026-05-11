@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- MOBILE VIEWPORT -->
+    <!-- Ensures proper scaling on all devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- PAGE TITLE -->
+    <!-- Appears on browser tab -->
+    <title>Shop - @_doolsellsnet</title>
+
+    <!-- EXTERNAL STYLESHEET -->
+    <!-- Business page styling file -->
+    <link rel="stylesheet" href="businessstyle.css">
+
+</head>
+
+<body>
+
+    <!-- =========================
+         MAIN SITE WRAPPER
+         (controls sidebar + main shop layout structure)
+    ========================= -->
+    <div class="site-wrapper">
+
+        <!-- =========================
+             SIDEBAR NAVIGATION
+             (global navigation for all portfolio pages)
+        ========================= -->
+        <aside class="sidebar">
+
+            <!-- LOGO SECTION -->
+            <!-- Branding icon / identity mark -->
+            <div class="logo-top">
+                <img src="logologo.png" alt="Sean Lao Logo" class="star-logo">
+            </div>
+
+            <!-- NAVIGATION MENU -->
+            <!-- Links to all main pages -->
+            <nav class="nav-links">
+                <a href="seanportfolio.html" class="nav-item">Home</a>
+                <a href="abtme.html" class="nav-item">About</a>
+                <a href="seantography.html" class="nav-item">Photography</a>
+                <a href="myart.html" class="nav-item">Art</a>
+                <a href="business.html" class="nav-item active">Business</a>
+                <a href="scrapbook.html" class="nav-item">Scrapbooking</a>
+            </nav>
+
+        </aside>
+
+        <!-- =========================
+             STICKY CONTACT WIDGET
+             (floating contact info always visible)
+        ========================= -->
+        <div class="sticky-contact">
+
+            <div class="contact-header">CONTACT ME</div>
+
+            <div class="contact-body">
+                <!-- SOCIAL + EMAIL CONTACT INFO -->
+                <p>IG: @_doolsellsnet</p>
+                <p>Email: hello@seanlao.com</p>
+            </div>
+
+        </div>
+
+        <!-- =========================
+             MAIN SHOP CONTENT AREA
+             (product showcase + business identity)
+        ========================= -->
+        <main class="main-content shop-layout">
+
+            <!-- =========================
+                 SHOP HEADER WINDOW
+                 (fake desktop UI introduction section)
+            ========================= -->
+            <div class="window-frame">
+
+                <!-- WINDOW TITLE BAR -->
+                <!-- Styled like a system application window -->
+                <div class="title-bar">
+                    <span class="dots">● ● ●</span>
+                    <span class="window-title">_doolsellsnet.exe</span>
+                </div>
+
+                <!-- SHOP IDENTITY HEADER -->
+                <!-- Profile + brand introduction -->
+                <div class="shop-header">
+
+                    <!-- PROFILE IMAGE -->
+                    <div class="pfp-glitch">
+                        <img src="businesspics/pfp.png" alt="Doolsellsnet profile picture" class="profile-pic">
+                    </div>
+
+                    <!-- BRAND TEXT -->
+                    <div class="header-text">
+                        <h1 class="shop-title">@_doolsellsnet</h1>
+                        <p class="blink">CHARMS, KPOP MERCH, & MORE... ! ☆</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- =========================
+                 BENTO GRID PRODUCT SHOWCASE
+                 (main shop items + catalog preview)
+            ========================= -->
+            <div class="bento-grid">
+
+                <!-- VIDEO SHOWCASE -->
+                <div class="bento-item video-box">
+
+                    <!-- STALL FOOTAGE DISPLAY -->
+                    <video autoplay muted loop playsinline>
+                        <source src="businesspics/stall.mp4" type="video/mp4">
+                    </video>
+
+                    <div class="tag">STALL_FOOTAGE.MP4</div>
+
+                </div>
+
+                <!-- CATALOGUE INFO -->
+                <div class="bento-item info-box">
+
+                    <h2>CATALOGUE</h2>
+
+                    <p>
+                        ☆ Handmade Charms<br>
+                        ☆ Kpop Photocards<br>
+                        ☆ Custom Keychains
+                    </p>
+
+                    <div class="ig-btn">@_doolsellsnet</div>
+
+                </div>
+
+                <!-- PRODUCT DISPLAY -->
+                <div class="bento-item image-box">
+                    <img src="businesspics/products1.png" alt="product image">
+                </div>
+
+                <div class="bento-item image-box">
+                    <img src="businesspics/products2.png" alt="product image">
+                </div>
+
+                <!-- BUSINESS RULES -->
+                <div class="bento-item text-rectangle">
+
+                    <!-- CUSTOMER INFO / POLICIES -->
+                    <div class="info-line">★ 18 YR OLD STUDENT-RUN BUSINESS</div>
+                    <div class="info-line">★ SHIPPING: 14-30 AED</div>
+                    <div class="info-line">★ NO CANCELLATIONS OR BACKOUTS</div>
+
+                </div>
+
+                <!-- TRANSACTION PROOF -->
+                <div class="bento-item stat-box">
+
+                    <h3>PROOF</h3>
+                    <p>50+ Transactions</p>
+
+                </div>
+
+                <!-- MORE PRODUCT DISPLAY -->
+                <div class="bento-item image-box">
+                    <img src="businesspics/products3.png" alt="product image">
+                </div>
+
+            </div>
+
+            <!-- =========================
+                 PAST STALLS GALLERY
+                 (business history / real-world activity proof)
+            ========================= -->
+            <div class="extra-inventory">
+
+                <!-- SECTION TITLE -->
+                <h2 class="section-label">PAST STALLS</h2>
+
+                <!-- IMAGE GRID -->
+                <div class="inventory-grid">
+
+                    <div class="item-card">
+                        <img src="businesspics/stallpic1.png" alt="stall photo">
+                    </div>
+
+                    <div class="item-card">
+                        <img src="businesspics/stallpic2.png" alt="stall photo">
+                    </div>
+
+                    <div class="item-card">
+                        <img src="businesspics/stallpic3.png" alt="stall photo">
+                    </div>
+
+                    <div class="item-card">
+                        <img src="businesspics/stallpic4.png" alt="stall photo">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- =========================
+         FOOTER SECTION
+         (final call-to-action / contact reminder)
+    ========================= -->
+    <footer class="shop-footer">
+
+        <p class="blink">
+            *** FOR MORE INFORMATION CHECK MY INSTAGRAM @_DOOLSELLSNET ***
+        </p>
+
+    </footer>
+
+</body>
+</html>

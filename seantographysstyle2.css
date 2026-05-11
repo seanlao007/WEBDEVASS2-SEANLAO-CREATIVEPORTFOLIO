@@ -1,0 +1,310 @@
+/* =========================================================
+   SUBPAGE 2 – PHOTOGRAPHY GALLERY (MACOS WINDOW STYLE)
+   =========================================================
+   This is Subpage 2 of my photography section.
+
+   The layout is inspired by a macOS-style window interface,
+   so it feels like browsing a desktop photo gallery rather
+   than a normal website.
+
+   It is designed to match my overall aesthetic and keep a
+   consistent visual identity across both photography pages.
+========================================================= */
+
+
+/* RESET (removes default browser spacing for consistency) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* PAGE BACKGROUND + FONT (keeps everything clean and consistent) */
+body {
+    background-color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    overflow: hidden; /* locks layout like a desktop window */
+}
+
+/* MAIN WRAPPER (holds sidebar + gallery layout) */
+.site-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* =========================================================
+   SIDEBAR NAVIGATION (shared across photography section)
+   ========================================================= */
+
+/* Sidebar container (fixed navigation bar) */
+.sidebar {
+    width: 110px; 
+    background-color: #d81b60; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 5px;
+    justify-content: flex-start; 
+    position: fixed;
+    height: 100vh;
+    z-index: 100;
+}
+
+/* Navigation links stack */
+.nav-links {
+    width: 100%;
+    margin-top: 40px; 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Navigation buttons */
+.nav-item {
+    background: linear-gradient(135deg, #b2ff59, #64ffda); 
+    color: white;
+    text-decoration: none;
+    font-size: 11px; 
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px; 
+    width: 88%; 
+    margin: 0 auto;
+    border-radius: 18px;
+    border: 2px solid #ffffff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+/* spacing between grouped buttons */
+.nav-item:nth-child(3) { margin-top: 35px; }
+
+/* hover effect */
+.nav-item:hover { 
+    transform: scale(1.1) rotate(-1deg);
+    box-shadow: 0 4px 15px rgba(178, 255, 89, 0.4);
+}
+
+/* active page highlight */
+.nav-item.active { 
+    border: 3.5px solid #ffffff; 
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); 
+    transform: scale(1.05);
+}
+
+/* sidebar logo */
+.star-logo { width: 80px; }
+
+/* =========================================================
+   MAIN GALLERY WINDOW (macOS-style layout container)
+   ========================================================= */
+
+/* main content background area */
+.main-content {
+    flex: 1;
+    margin-left: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* subtle desktop-style background texture */
+    background-color: #bbdefb;
+    background-image: radial-gradient(#333 0.5px, transparent 0.5px);
+    background-size: 20px 20px;
+}
+
+/* window-style frame (main gallery container) */
+.window-frame {
+    width: 94%;
+    height: 90vh;
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    overflow: hidden;
+    border: 1px solid #d1d1d1;
+}
+
+/* =========================================================
+   INNER SIDEBAR (album navigation inside window)
+   ========================================================= */
+
+/* inside sidebar panel */
+.inner-sidebar {
+    width: 180px;
+    background: rgba(245, 245, 245, 0.95);
+    border-right: 1px solid #ddd;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* macOS traffic light buttons */
+.traffic-lights {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+/* window control dots */
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.red { background: #ff5f57; }
+.yellow { background: #febc2e; }
+.green { background: #28c840; }
+
+/* album/category items */
+.inner-sidebar-item {
+    font-size: 12px;
+    padding: 5px 8px;
+    color: #444;
+    border-radius: 4px;
+}
+
+/* active album state */
+.inner-sidebar-item.active {
+    background: #e0e0e0;
+    font-weight: 500;
+}
+
+/* small label headings */
+.sidebar-label {
+    font-size: 9px;
+    font-weight: 800;
+    color: #999;
+    text-transform: uppercase;
+    display: block;
+    padding: 12px 8px 4px;
+}
+
+/* =========================================================
+   GALLERY VIEW (photo display area)
+   ========================================================= */
+
+/* right side gallery container */
+.gallery-view {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    overflow: hidden;
+}
+
+/* top header bar */
+.gallery-header {
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+}
+
+/* title styling */
+h1 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* small info row under title */
+.header-sub-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #333;
+}
+
+/* right-side tools area */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* zoom control */
+.zoom-tool {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #999;
+}
+
+/* zoom slider bar */
+.slider {
+    width: 60px;
+    height: 4px;
+    background: #eee;
+    border-radius: 2px;
+    position: relative;
+}
+
+/* slider fill */
+.slider-fill {
+    width: 50%;
+    height: 100%;
+    background: #007aff;
+    border-radius: 2px;
+}
+
+/* slider knob */
+.slider-knob {
+    width: 12px;
+    height: 12px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: -4.5px;
+}
+
+/* mac-style button */
+.btn-macos {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid #d1d1d1;
+    background: white;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* =========================================================
+   PHOTO GRID (main image layout)
+   ========================================================= */
+
+/* scrollable photo container */
+.photo-container {
+    padding: 30px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* responsive image grid */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 20px;
+}
+
+/* photo cards */
+.photo-box {
+    aspect-ratio: 1/1;
+    border-radius: 12px; 
+    overflow: hidden;
+    border: 1px solid #eee;
+    transition: transform 0.2s ease;
+}
+
+/* hover interaction */
+.photo-box:hover {
+    transform: scale(1.02);
+}
+
+/* image fit */
+.photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

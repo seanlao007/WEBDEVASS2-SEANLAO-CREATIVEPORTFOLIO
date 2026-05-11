@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- VIEWPORT SETUP
+    Makes sure the page looks correct on mobile, tablet, and desktop screens. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- PAGE TITLE
+    This is what shows on the browser tab and represents this section of my portfolio. -->
+    <title>Scrapbooking - Sean Lao</title>
+
+    <!-- STYLESHEET
+    This connects the visual design (colors, layout, scrapbook aesthetic) to the HTML structure. -->
+    <link rel="stylesheet" href="scrapbookstyle.css">
+
+</head>
+
+<body>
+
+    <!-- MAIN WRAPPER
+    This is the overall container that keeps the sidebar and main content aligned properly. -->
+    <div class="site-wrapper">
+
+        <!-- SIDEBAR NAVIGATION
+        This is the global menu used across all my portfolio pages.
+        It helps users move between different parts of my work easily. -->
+        <aside class="sidebar">
+
+            <!-- LOGO
+            My branding element that stays consistent across all pages. -->
+            <div class="logo-top">
+                <img src="logologo.png" alt="Star Logo" class="star-logo">
+            </div>
+
+            <!-- NAVIGATION LINKS
+            These links act like a portfolio map, connecting all my different creative sections. -->
+            <nav class="nav-links">
+                <a href="seanportfolio.html" class="nav-item">Home</a>
+                <a href="abtme.html" class="nav-item">About</a>
+                <a href="seantography.html" class="nav-item">Photography</a>
+                <a href="myart.html" class="nav-item">Art</a>
+                <a href="business.html" class="nav-item">Business</a>
+                <a href="scrapbook.html" class="nav-item active">Scrapbooking</a>
+            </nav>
+
+        </aside>
+
+        <!-- MAIN SCRAPBOOK CONTENT
+        This is the creative space where I show my scrapbook work and personal expression. -->
+        <main class="scrapbook-vibe">
+
+            <!-- HEADER SECTION
+            This introduces the scrapbook section and sets the handmade / zine-style tone. -->
+            <header>
+
+                <h1 class="zine-title">SEAN'S SCRAPBOOKING</h1>
+
+                <!-- SUBTITLE
+                A small aesthetic line that describes the vibe of this page. -->
+                <div class="zine-subtitle">
+                    ☆ arts & crafts ☆ scrapbooking ☆ paper crafts ☆
+                </div>
+
+            </header>
+
+            <!-- JOURNAL SPREAD SECTION
+            This is the main visual layout combining video, text, and image collage. -->
+            <div class="journal-spread-wrapper">
+
+                <!-- VIDEO SECTION
+                This shows my scrapbook process in motion instead of just static images.
+                I used autoplay + loop to make it feel alive and continuous. -->
+                <div class="portrait-video">
+
+                    <video autoplay muted loop playsinline class="scrapbook-video">
+                        <source src="scrapbookstuff/scrapbookvid.mp4" type="video/mp4">
+                    </video>
+
+                    <p class="video-label">Journal Tour</p>
+
+                </div>
+
+                <!-- RIGHT COLUMN CONTENT
+                This section mixes reflection + visual collage, like a digital scrapbook page. -->
+                <div class="right-column-stack">
+
+                    <!-- ESCAPISM BOX
+                    This explains the emotional meaning behind scrapbooking for me.
+                    It's not just a hobby — it's a way of expressing things I can’t easily say. -->
+                    <div class="escapism-box">
+
+                        <h3>Quiet Expression</h3>
+
+                        <p>
+                            For me, scrapbooking is a form of <b>escapism</b>.
+                            It's a space where I don't have to find the right words to explain myself.
+                        </p>
+
+                        <p>
+                            Building these spreads allows me to express my love for my interests—purely through visuals and textures.
+                        </p>
+
+                        <p class="handwritten">- Sean</p>
+
+                    </div>
+
+                    <!-- IMAGE GRID
+                    This is a collection of visual fragments that represent my aesthetic style and interests. -->
+                    <div class="photo-grid-six">
+
+                        <div class="grid-img-box"><img src="scrapbookstuff/pic1.png"></div>
+                        <div class="grid-img-box"><img src="scrapbookstuff/pic2.png"></div>
+                        <div class="grid-img-box"><img src="scrapbookstuff/pic3.png"></div>
+                        <div class="grid-img-box"><img src="scrapbookstuff/pic4.png"></div>
+                        <div class="grid-img-box"><img src="scrapbookstuff/pic5.png"></div>
+                        <div class="grid-img-box"><img src="scrapbookstuff/pic6.png"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- DIVIDER
+            A visual break to separate different parts of the scrapbook layout. -->
+            <div class="bottom-divider-line"></div>
+
+            <!-- BOTTOM GALLERY SECTION
+            This continues the scrapbook story with more personal work and process videos. -->
+            <div class="bottom-gallery-row">
+
+                <!-- LEFT SIDE CONTENT -->
+                <div class="bottom-left-stack">
+
+                    <!-- PHOTO PAIR
+                    These images represent physical pieces of my creative process. -->
+                    <div class="photo-pair">
+
+                        <div class="grid-img-box work-photo">
+                            <img src="scrapbookstuff/pic7.png">
+                        </div>
+
+                        <div class="grid-img-box work-photo">
+                            <img src="scrapbookstuff/pic8.png">
+                        </div>
+
+                    </div>
+
+                    <!-- MEMO BOX
+                    This is a short reflection on how I approach creative work. -->
+                    <div class="memo-box">
+
+                        <p>
+                            Every piece of work starts with an obsession.
+                            Whether it's a color palette or magazine cutouts,
+                            everything builds a story visually instead of verbally.
+                        </p>
+
+                        <p class="handwritten">creative process // 2026</p>
+
+                    </div>
+
+                </div>
+
+                <!-- SECOND VIDEO SECTION
+                This adds movement and life to the scrapbook, showing inspiration in motion. -->
+                <div class="bottom-video-box landscape">
+
+                    <video autoplay muted loop playsinline class="scrapbook-video">
+                        <source src="scrapbookstuff/newjeansvid.mp4" type="video/mp4">
+                    </video>
+
+                </div>
+
+            </div>
+
+            <!-- MUSIC PLAYER
+            This is optional background audio that adds atmosphere to the scrapbook experience. -->
+            <div class="music-player scrapbook-player">
+
+                <p>♫ ZEROBASEONE - FEEL THE POP</p>
+
+                <div class="controls">
+
+                    <audio id="bg-music" loop>
+                        <source src="scrapbookstuff/feelthepop.mp3" type="audio/mpeg">
+                    </audio>
+
+                    <button onclick="togglePlay()">PLAY / PAUSE</button>
+                    <button onclick="toggleMute()">MUTE</button>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- JAVASCRIPT CONTROLS
+    These functions allow simple interaction with the background music player. -->
+    <script>
+        const music = document.getElementById('bg-music');
+
+        function togglePlay() {
+            if (music.paused) {
+                music.play();
+            } else {
+                music.pause();
+            }
+        }
+
+        function toggleMute() {
+            music.muted = !music.muted;
+        }
+    </script>
+
+</body>
+</html>

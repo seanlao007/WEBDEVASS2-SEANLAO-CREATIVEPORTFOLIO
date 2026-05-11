@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Art - Sean Lao</title>
+
+    <!-- Main stylesheet controlling the Pinterest-style layout and grid system -->
+    <link rel="stylesheet" href="myartstyle.css">
+
+</head>
+
+<body>
+
+    <!-- Entire page layout wrapper (sidebar + main content) -->
+    <div class="site-wrapper">
+
+        <!-- LEFT SIDEBAR: persistent navigation across all portfolio pages -->
+        <aside class="sidebar">
+
+            <!-- Logo section (branding / identity marker) -->
+            <div class="logo-top">
+                <img src="logologo.png" alt="Sean Lao Logo" class="star-logo">
+            </div>
+
+            <!-- Main navigation links (acts like site-wide menu system) -->
+            <nav class="nav-links">
+                <a href="seanportfolio.html" class="nav-item">Home</a>
+                <a href="abtme.html" class="nav-item">About</a>
+                <a href="seantography.html" class="nav-item">Photography</a>
+                <a href="myart.html" class="nav-item active">Art</a>
+                <a href="business.html" class="nav-item">Business</a>
+                <a href="scrapbook.html" class="nav-item">Scrapbooking</a>
+            </nav>
+
+        </aside>
+
+        <!-- MAIN CONTENT AREA (Pinterest-style art board layout) -->
+        <main class="main-content">
+
+            <!-- Top search bar (purely aesthetic + Pinterest reference) -->
+            <div class="top-search-bar">
+
+                <div class="search-container">
+                    <img src="myartpics/searchlogo.png" alt="Search" class="search-icon">
+                    <input type="text" placeholder="Search your Pins">
+                </div>
+
+            </div>
+
+            <!-- PROFILE HEADER: identity + navigation context for this page -->
+            <header class="pinterest-header">
+
+                <!-- Page identity + user info section -->
+                <div class="profile-section">
+
+                    <!-- Page title (acts like board title) -->
+                    <div class="profile-left">
+                        <h1 class="page-title">My Art</h1>
+                    </div>
+
+                    <!-- User profile summary (Pinterest-inspired layout) -->
+                    <div class="profile-right">
+
+                        <!-- Profile image -->
+                        <img src="myartpics/pfp.png" alt="Sean Lao" class="user-avatar-img">
+
+                        <!-- Name + follower info -->
+                        <div class="user-info">
+                            <h2>Sean Lao</h2>
+                            <p>0 following</p>
+                        </div>
+
+                        <!-- Action button (mock social feature) -->
+                        <button class="share-profile-btn">Share profile</button>
+
+                    </div>
+
+                </div>
+
+                <!-- Tab navigation (simulated Pinterest board categories) -->
+                <nav class="sub-nav">
+                    <a href="#">Pins</a>
+                    <a href="#" class="active-tab">Boards</a>
+                    <a href="#">Collages</a>
+                </nav>
+
+                <!-- Action bar: filtering + content organization tools -->
+                <div class="action-bar">
+
+                    <div class="action-left">
+                        <img src="myartpics/filter.png" alt="Filter" class="filter-icon-only">
+                        <button class="pill-btn">Group</button>
+                        <button class="pill-btn">Secret</button>
+                    </div>
+
+                    <!-- Create button (simulates adding new pins) -->
+                    <button class="create-btn">Create</button>
+
+                </div>
+
+                <!-- Section label: separates different content groups visually -->
+                <div class="section-title-bar">
+                    <h2 class="section-label">Unorganized ideas</h2>
+                    <button class="organize-btn">Organize</button>
+                </div>
+
+            </header>
+
+            <!-- MAIN MASONRY GRID: core visual content layout -->
+            <!-- This is where artwork, reflections, and ideas are mixed -->
+            <section class="masonry-grid">
+
+                <!-- IMAGE PIN: artwork showcase item -->
+                <div class="grid-item">
+                    <div class="pin-container">
+                        <img src="myartpics/artwork7.png" alt="Artwork">
+                        <div class="pin-overlay">
+                            <button class="save-btn">Save</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <div class="pin-container">
+                        <img src="myartpics/artwork8.png" alt="Artwork">
+                        <div class="pin-overlay">
+                            <button class="save-btn">Save</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TEXT CARD: personal reflection / context block -->
+                <div class="grid-item text-card">
+
+                    <h3>Lifelong Creative</h3>
+
+                    <p>
+                        I've always been into creative stuff since I was younger.
+                        Art is just one way I express things I can't really say properly.
+                    </p>
+
+                </div>
+
+                <!-- IMAGE PIN -->
+                <div class="grid-item">
+                    <div class="pin-container">
+                        <img src="myartpics/artwork3.png" alt="Artwork">
+                        <div class="pin-overlay">
+                            <button class="save-btn">Save</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <div class="pin-container">
+                        <img src="myartpics/artwork9.png" alt="Artwork">
+                        <div class="pin-overlay">
+                            <button class="save-btn">Save</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TEXT CARD: longer reflection section -->
+                <div class="grid-item text-card tall">
+
+                    <h3>The Art Student Journey</h3>
+
+                    <p>
+                        Being an art student basically means everything is always changing.
+                        I use digital work a lot just to keep track of my progress over time.
+                    </p>
+
+                </div>
+
+                <!-- IMAGE PIN -->
+                <div class="grid-item">
+                    <div class="pin-container">
+                        <img src="myartpics/artwork4.png" alt="Artwork">
+                        <div class="pin-overlay">
+                            <button class="save-btn">Save</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TEXT CARD: archive concept explanation -->
+                <div class="grid-item text-card">
+
+                    <h3>Visual Archive</h3>
+
+                    <p>
+                        I kind of treat this page like a storage space for ideas.
+                        Everything from sketches to random concepts ends up here.
+                    </p>
+
+                </div>
+
+                <!-- IMAGE PIN -->
+                <div class="grid-item">
+                    <div class="pin-container">
+                        <img src="myartpics/artwork5.png" alt="Artwork">
+                        <div class="pin-overlay">
+                            <button class="save-btn">Save</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <div class="pin-container">
+                        <img src="myartpics/artwork1.png" alt="Artwork">
+                        <div class="pin-overlay">
+                            <button class="save-btn">Save</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <div class="pin-container">
+                        <img src="myartpics/artwork10.png" alt="Artwork">
+                        <div class="pin-overlay">
+                            <button class="save-btn">Save</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TEXT CARD: closing reflection -->
+                <div class="grid-item text-card tall">
+
+                    <h3>Expression through Art</h3>
+
+                    <p>
+                        This whole page is basically just a collection of things that inspire me
+                        or represent what I'm working on at the moment.
+                    </p>
+
+                </div>
+
+                <!-- IMAGE PIN -->
+                <div class="grid-item">
+                    <div class="pin-container">
+                        <img src="myartpics/artwork2.png" alt="Artwork">
+                        <div class="pin-overlay">
+                            <button class="save-btn">Save</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <div class="pin-container">
+                        <img src="myartpics/artwork6.png" alt="Artwork">
+                        <div class="pin-overlay">
+                            <button class="save-btn">Save</button>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+</html>

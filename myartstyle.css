@@ -1,0 +1,359 @@
+/* =========================================================
+   PINTEREST / SCRAPBOOK STYLE PORTFOLIO PAGE
+   =========================================================
+   I designed this page to present my scrapbook and visual
+   ideas in a clean Pinterest-like layout.
+
+   The goal is to keep the layout structured and minimal,
+   while letting the “creative chaos” live inside the images
+   (textures, collages, mood boards, etc.).
+
+   Pinterest is also part of my creative process — I use it
+   to plan compositions, visual flow, and aesthetics.
+========================================================= */
+
+
+/* =========================
+   GLOBAL RESET
+   (removes default spacing so layout behaves consistently
+   across all browsers)
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   SIDEBAR NAVIGATION
+   (fixed left navigation used across all pages)
+========================= */
+.sidebar {
+    width: 110px; 
+    background-color: #d81b60; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 5px;
+    justify-content: flex-start; 
+    position: fixed;
+    height: 100vh;
+    z-index: 100;
+}
+
+.nav-links { 
+    width: 100%; 
+    margin-top: 40px; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px; 
+}
+
+.nav-item {
+    background: linear-gradient(135deg, #b2ff59, #64ffda); 
+    color: white; 
+    text-decoration: none; 
+    font-size: 11px; 
+    font-weight: 800;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    height: 36px; 
+    width: 88%; 
+    margin: 0 auto; 
+    border-radius: 18px; 
+    border: 2px solid #ffffff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.15); 
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-align: center;
+}
+
+/* spacing adjustment between nav groups */
+.nav-item:nth-child(3) { margin-top: 35px; }
+
+/* hover interaction effect */
+.nav-item:hover { 
+    transform: scale(1.1) rotate(-1deg); 
+    box-shadow: 0 4px 15px rgba(178, 255, 89, 0.4); 
+}
+
+/* active page highlight (shows current section) */
+.nav-item.active { 
+    border: 3.5px solid #ffffff; 
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); 
+    transform: scale(1.05); 
+}
+
+.star-logo { width: 80px; }
+
+
+/* =========================
+   BASE PAGE STYLING
+   (overall font + background setup)
+========================= */
+body {
+    background-color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* pushes content to the right of sidebar */
+.main-content {
+    margin-left: 110px;
+    padding: 0;
+}
+
+
+/* =========================
+   TOP SEARCH BAR
+   (Pinterest-style search interface)
+========================= */
+.top-search-bar {
+    padding: 10px 30px;
+    background-color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.search-container {
+    background-color: #efefef;
+    border-radius: 24px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.search-container input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    font-size: 16px;
+    outline: none;
+}
+
+
+/* =========================
+   PROFILE HEADER SECTION
+   (title, avatar, and user identity area)
+========================= */
+.pinterest-header {
+    padding: 40px 60px 20px 60px;
+}
+
+.profile-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.page-title {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.profile-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-avatar-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #efefef;
+}
+
+.user-info h2 { font-size: 24px; font-weight: 600; }
+.user-info p { color: #111; font-weight: 500; font-size: 14px; }
+
+.share-profile-btn {
+    background-color: #efefef;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 24px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+/* =========================
+   NAV TABS
+   (switch between sections like Pins / Boards / etc.)
+========================= */
+.sub-nav {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.sub-nav a {
+    text-decoration: none;
+    color: #111;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.active-tab {
+    border-bottom: 3px solid #111;
+    padding-bottom: 5px;
+}
+
+
+/* =========================
+   ACTION BAR
+   (filters + buttons for interaction)
+========================= */
+.action-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.action-left { 
+    display: flex; 
+    gap: 15px; 
+    align-items: center; 
+}
+
+.filter-icon-only {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.filter-icon-only:hover {
+    opacity: 0.6;
+}
+
+.pill-btn {
+    border: none;
+    background-color: #efefef;
+    padding: 10px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.pill-btn:hover {
+    background-color: #e2e2e2;
+}
+
+.create-btn {
+    background-color: #e60023;
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 25px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+/* =========================
+   SECTION TITLE BAR
+   (labels for grouped content sections)
+========================= */
+.section-title-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-label { font-size: 20px; font-weight: 600; }
+
+.organize-btn {
+    border: none;
+    background-color: #efefef;
+    padding: 10px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+/* =========================
+   MASONRY GRID LAYOUT
+   (Pinterest-style uneven grid system for posts)
+========================= */
+.masonry-grid {
+    column-count: 4; 
+    column-gap: 15px; 
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.grid-item {
+    display: inline-block; 
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    break-inside: avoid; 
+}
+
+
+/* =========================
+   IMAGE POSTS
+   (scrapbook / visual content display)
+========================= */
+.pin-container img {
+    width: 100%;
+    display: block;
+    border-radius: 16px;
+}
+
+
+/* =========================
+   TEXT CARDS
+   (written notes / ideas instead of visuals)
+========================= */
+.text-card { 
+    padding: 20px; 
+    background-color: #f7f7f7; 
+    border: 1px solid #eeeeee;
+}
+
+.text-card h3 { font-size: 13px; color: #888888; margin-bottom: 8px; text-transform: uppercase; }
+.text-card p { font-size: 14px; color: #555555; line-height: 1.5; }
+.text-card.tall { min-height: 200px; }
+
+
+/* =========================
+   HOVER OVERLAY
+   (save button appears on hover like Pinterest)
+========================= */
+.pin-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px;
+}
+
+.grid-item:hover .pin-overlay { opacity: 1; }
+
+.save-btn {
+    background-color: #e60023;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 700;
+    height: fit-content;
+}

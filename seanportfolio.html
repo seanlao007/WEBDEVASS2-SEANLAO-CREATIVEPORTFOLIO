@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sean Lao Portfolio</title>
+
+    <!-- Main stylesheet that controls the entire site's visual style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================================================
+         MAIN WRAPPER
+         This holds both the sidebar and the main content area
+    ========================================================= -->
+    <div class="site-wrapper">
+
+        <!-- ================= SIDEBAR NAVIGATION ================= -->
+        <aside class="sidebar-container">
+
+            <!-- Logo / Branding at the top of the sidebar -->
+            <div class="logo-wrapper">
+                <img src="portfoliopic/myportfoliologo.png"
+                     alt="Logo"
+                     class="sidebar-logo">
+            </div>
+
+            <!-- Navigation system (links to all pages) -->
+            <nav class="nav-container">
+
+                <!-- First group (core pages) -->
+                <div class="nav-group">
+                    <a href="seanportfolio.html" class="nav-pill">Home</a>
+                    <a href="abtme.html" class="nav-pill">About</a>
+                </div>
+
+                <!-- Second group (creative / portfolio pages) -->
+                <div class="nav-group">
+                    <a href="seantography.html" class="nav-pill">Photography</a>
+                    <a href="myart.html" class="nav-pill">Art</a>
+                    <a href="business.html" class="nav-pill">Business</a>
+                    <a href="scrapbook.html" class="nav-pill">Scrapbooking</a>
+                </div>
+
+            </nav>
+        </aside>
+
+        <!-- ================= MAIN CONTENT AREA ================= -->
+        <main class="content-area">
+
+            <!-- =====================================================
+                 HERO SLIDESHOW
+                 Main visual banner at the top of the homepage
+            ====================================================== -->
+            <div class="slideshow-wrapper">
+
+                <!-- Left arrow button (previous slide) -->
+                <button class="side-arrow left-arrow"
+                        onclick="moveSlide(-1)">
+                    &#10094;
+                </button>
+
+                <!-- Right arrow button (next slide) -->
+                <button class="side-arrow right-arrow"
+                        onclick="moveSlide(1)">
+                    &#10095;
+                </button>
+
+                <!-- Container holding all slideshow images -->
+                <div class="image-container">
+
+                    <!-- First slide (visible by default) -->
+                    <img src="portfoliopic/portfoliomain.png"
+                         class="slide fade"
+                         alt="Portfolio 1">
+
+                    <!-- Second slide (hidden until JS activates it) -->
+                    <img src="portfoliopic/portfoliopic2.png"
+                         class="slide fade hidden"
+                         alt="Portfolio 2">
+
+                </div>
+
+                <!-- Slide indicator dots (manual navigation) -->
+                <div class="dot-container">
+                    <span class="dot active" onclick="setSlide(0)"></span>
+                    <span class="dot" onclick="setSlide(1)"></span>
+                </div>
+
+            </div>
+
+            <!-- =====================================================
+                 QUICK ACCESS APP GRID
+                 Acts like "desktop icons" linking to other pages
+            ====================================================== -->
+            <div class="app-grid">
+
+                <!-- Photography shortcut -->
+                <a href="seantography.html" class="app-item">
+                    <img src="appicons/seantographyapp.png"
+                         alt="Photography Logo">
+                    <span class="app-label">Photography</span>
+                </a>
+
+                <!-- Art shortcut -->
+                <a href="myart.html" class="app-item offset-down">
+                    <img src="appicons/myartpic.png.png"
+                         alt="Art Logo">
+                    <span class="app-label">Art</span>
+                </a>
+
+                <!-- Business shortcut -->
+                <a href="business.html" class="app-item">
+                    <img src="appicons/aboutmepic.png"
+                         alt="Business Logo">
+                    <span class="app-label">Business</span>
+                </a>
+
+                <!-- Scrapbook shortcut -->
+                <a href="scrapbook.html" class="app-item offset-up">
+                    <img src="appicons/scrapbookapp.png"
+                         alt="Scrapbook Logo">
+                    <span class="app-label">Scrapbooking</span>
+                </a>
+
+            </div>
+
+            <!-- =====================================================
+                 SCRAPBOOK / HIGHLIGHTS SECTION
+                 Mix of video, collage, and personal visuals
+            ====================================================== -->
+            <section class="glimpses-section">
+
+                <!-- Section title -->
+                <h2 class="glimpses-title">my glimpses</h2>
+
+                <div class="scrapbook-row">
+
+                    <!-- ================= VIDEO FEATURE ================= -->
+                    <div class="video-spread">
+
+                        <!-- decorative tape element -->
+                        <div class="tape tape-top"></div>
+
+                        <!-- main vlog video -->
+                        <video class="scrapbook-video"
+                               controls
+                               autoplay
+                               muted
+                               loop>
+
+                            <source src="portfoliopic/villamayorvlog.mp4"
+                                    type="video/mp4">
+                        </video>
+
+                        <!-- video caption -->
+                        <p class="video-caption">
+                            Birthday Celebration Vlog
+                        </p>
+
+                    </div>
+
+                    <!-- ================= PHOTO COLLAGE ================= -->
+                    <div class="collage-side">
+
+                        <!-- polaroid image group -->
+                        <div class="collage-grid">
+
+                            <!-- first photo -->
+                            <div class="polaroid">
+                                <img src="portfoliopic/poladroidpic2.png"
+                                     alt="Snap 1">
+                            </div>
+
+                            <!-- second photo (slightly rotated for scrapbook effect) -->
+                            <div class="polaroid rotate-left">
+                                <img src="portfoliopic/poalroidpic1.png"
+                                     alt="Snap 2">
+                            </div>
+
+                        </div>
+
+                        <!-- short description under collage -->
+                        <div class="collage-caption">
+                            <p>
+                                small fragments of my creative process — just
+                                documenting things as I go along
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- ================= ART SHOWCASE ================= -->
+                <h2 class="art-showcase-title">art showcase</h2>
+
+                <div class="landscape-feature">
+
+                    <!-- decorative tape corners -->
+                    <div class="tape tape-corner-l"></div>
+                    <div class="tape tape-corner-r"></div>
+
+                    <!-- main artwork image -->
+                    <img src="portfoliopic/artcollage.png"
+                         alt="Art Showcase"
+                         class="big-landscape-img">
+
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <!-- =========================================================
+         STICKY MARQUEE / SCROLLING BANNER
+         Decorative footer message that loops infinitely
+    ========================================================== -->
+    <div class="sticky-marquee">
+
+        <div class="marquee-content">
+
+            <!-- pixel decoration -->
+            <img src="portfoliopic/pixelartbanner.png"
+                 alt="Pixel Art"
+                 class="marquee-pixel">
+
+            <!-- repeating message -->
+            <span>FOR MORE LOOK THROUGH MY PAGE ♡</span>
+
+            <img src="portfoliopic/pixelartbanner.png"
+                 alt="Pixel Art"
+                 class="marquee-pixel">
+
+            <span>FOR MORE LOOK THROUGH MY PAGE ♡</span>
+
+            <img src="portfoliopic/pixelartbanner.png"
+                 alt="Pixel Art"
+                 class="marquee-pixel">
+
+            <span>FOR MORE LOOK THROUGH MY PAGE ♡</span>
+
+        </div>
+    </div>
+
+    <!-- JavaScript controlling slideshow movement -->
+    <script src="script.js"></script>
+
+</body>
+</html>

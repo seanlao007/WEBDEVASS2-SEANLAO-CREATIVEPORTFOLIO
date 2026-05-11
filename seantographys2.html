@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography - Sean Lao</title>
+    <link rel="stylesheet" href="seantographysstyle1.css">
+</head>
+
+<body>
+
+    <!-- 
+        This page is basically the same layout as seantography1.html.
+        The only real difference is the set of photos displayed here
+        (this one is just another gallery collection within the same system).
+    -->
+
+    <div class="site-wrapper">
+
+        <!-- sidebar stays the same across all photography pages -->
+        <aside class="sidebar">
+
+            <div class="logo-top">
+                <img src="logologo.png" alt="Logo" class="star-logo">
+            </div>
+
+            <nav class="nav-links">
+                <a href="seanportfolio.html" class="nav-item">Home</a>
+                <a href="abtme.html" class="nav-item">About</a>
+                <a href="seantography.html" class="nav-item active">Photography</a>
+                <a href="myart.html" class="nav-item">Art</a>
+                <a href="business.html" class="nav-item">Business</a>
+                <a href="scrapbook.html" class="nav-item">Scrapbooking</a>
+            </nav>
+
+        </aside>
+
+        <main class="main-content">
+
+            <div class="window-frame">
+
+                <!-- inner sidebar mimics a photo app layout -->
+                <aside class="inner-sidebar">
+
+                    <div class="traffic-lights">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+
+                    <div class="sidebar-scroll">
+
+                        <div class="sidebar-section">
+                            <p class="inner-sidebar-item active">Library</p>
+                            <p class="inner-sidebar-item">Collections</p>
+                        </div>
+
+                        <div class="sidebar-section">
+                            <label class="sidebar-label">Devices</label>
+                            <p class="inner-sidebar-item">iPhone</p>
+                        </div>
+
+                        <div class="sidebar-section">
+                            <p class="inner-sidebar-item">Pinned</p>
+                            <p class="inner-sidebar-item">Albums</p>
+                            <p class="inner-sidebar-item">Sharing</p>
+                            <p class="inner-sidebar-item">Media Types</p>
+                            <p class="inner-sidebar-item">Utilities</p>
+                        </div>
+
+                    </div>
+
+                </aside>
+
+                <!-- main gallery section -->
+                <section class="gallery-view">
+
+                    <header class="gallery-header">
+
+                        <div class="header-left">
+                            <h1>Import</h1>
+
+                            <!-- small toggle just for UI realism -->
+                            <div class="header-sub-row">
+                                <input type="checkbox" checked>
+                                <span>Open Photos</span>
+                            </div>
+
+                        </div>
+
+                        <div class="header-right">
+
+                            <!-- zoom control is purely visual, like a macOS photo app -->
+                            <div class="zoom-tool">
+                                <span>-</span>
+                                <div class="slider">
+                                    <div class="slider-fill"></div>
+                                    <div class="slider-knob"></div>
+                                </div>
+                                <span>+</span>
+                            </div>
+
+                            <button class="btn-macos primary">
+                                Import All New Photos
+                            </button>
+
+                        </div>
+
+                    </header>
+
+                    <div class="photo-container">
+
+                        <!-- this is where the new set of photos for this gallery lives -->
+                        <h2>New Photos</h2>
+
+                        <div class="photo-grid">
+
+                            <!-- same structure as other gallery, just different images -->
+                            <div class="photo-box"><img src="seantographypics/pic1.png"></div>
+                            <div class="photo-box"><img src="seantographypics/pic2.png"></div>
+                            <div class="photo-box"><img src="seantographypics/pic3.gif"></div>
+                            <div class="photo-box"><img src="seantographypics/pic4.gif"></div>
+                            <div class="photo-box"><img src="seantographypics/pic5.png"></div>
+                            <div class="photo-box"><img src="seantographypics/pic6.png"></div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,375 @@
+/* =========================================================
+   BUSINESS PAGE (BENTO / ARCHIVE STYLE)
+   =========================================================
+   This page is designed as a visual business portfolio.
+
+   It combines:
+   - product showcase
+   - video documentation
+   - reflective text sections
+
+   The layout is built using a bento-grid system to feel like
+   a curated digital storefront rather than a linear page.
+========================================================= */
+
+
+/* RESET — removes default browser spacing so layout is consistent */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* SIDEBAR — fixed navigation used across all pages */
+.sidebar {
+    width: 110px; 
+    background-color: #d81b60; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 5px;
+    justify-content: flex-start; 
+    position: fixed;
+    height: 100vh;
+    z-index: 100;
+}
+
+
+/* NAVIGATION LINKS — vertical menu system */
+.nav-links {
+    width: 100%;
+    margin-top: 40px; 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* NAV ITEMS — pill-shaped interactive buttons */
+.nav-item {
+    background: linear-gradient(135deg, #b2ff59, #64ffda); 
+    color: white;
+    text-decoration: none;
+    font-size: 11px; 
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px; 
+    width: 88%; 
+    margin: 0 auto;
+    border-radius: 18px;
+    border: 2px solid #ffffff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-align: center;
+}
+
+/* spacing between grouped nav sections */
+.nav-item:nth-child(3) { margin-top: 35px; }
+
+/* hover animation — gives slight movement + glow */
+.nav-item:hover { 
+    transform: scale(1.1) rotate(-1deg);
+    box-shadow: 0 4px 15px rgba(178, 255, 89, 0.4);
+    filter: brightness(1.1);
+}
+
+/* active page indicator — highlights current page */
+.nav-item.active {
+    background: linear-gradient(135deg, #b2ff59, #64ffda); 
+    border: 3.5px solid #ffffff; 
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); 
+    transform: scale(1.05);
+}
+
+
+/* LOGO — branding element at top of sidebar */
+.star-logo { width: 80px; }
+
+
+/* PAGE BASE — global styling */
+body { 
+    background-color: #faf9f6; 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    overflow-x: hidden;
+}
+
+/* overall layout wrapper (sidebar + content) */
+.site-wrapper { 
+    display: flex; 
+    min-height: 100vh; 
+}
+
+
+/* MUSIC PLAYER — floating widget (persistent UI element) */
+.music-player {
+    position: fixed;
+    bottom: 20px;
+    left: 130px;
+    background: #000;
+    color: #b2ff59;
+    padding: 10px;
+    border: 2px solid #fff;
+    z-index: 1000;
+    width: 200px;
+    font-family: monospace;
+    box-shadow: 5px 5px 0px #d81b60;
+}
+
+/* song display info */
+.song-info { 
+    display: flex; 
+    gap: 5px; 
+    font-size: 10px; 
+    margin-bottom: 8px; 
+    overflow: hidden;
+}
+
+/* music control buttons */
+.player-controls { 
+    display: flex; 
+    gap: 5px; 
+}
+
+.player-controls button {
+    flex: 1;
+    background: #b2ff59;
+    border: none;
+    font-size: 9px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 4px;
+}
+
+
+/* CONTACT BOX — floating info panel */
+.sticky-contact {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 180px;
+    background: #000;
+    color: #b2ff59;
+    border: 2px solid #fff;
+    font-family: monospace;
+    z-index: 999;
+    box-shadow: 5px 5px 0px #d81b60;
+}
+
+/* contact header strip */
+.contact-header {
+    background: #d81b60;
+    color: white;
+    padding: 5px;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* contact content area */
+.contact-body {
+    padding: 10px;
+    font-size: 11px;
+}
+
+
+/* MAIN CONTENT AREA — business page background container */
+.shop-layout { 
+    background: #e0e0e0 !important; 
+    padding: 40px !important; 
+    margin-left: 110px;
+    flex: 1;
+    min-height: 100vh;
+}
+
+
+/* WINDOW FRAME — main content container styled like a desktop window */
+.window-frame {
+    background: #fff;
+    border: 3px solid #000;
+    box-shadow: 10px 10px 0px #d81b60;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+/* top bar of window (like a desktop app header) */
+.title-bar {
+    background: #000;
+    color: #fff;
+    padding: 5px 15px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    font-family: monospace;
+}
+
+
+/* HEADER SECTION — profile + title area */
+.shop-header { 
+    display: flex; 
+    align-items: center; 
+    padding: 30px; 
+    gap: 25px; 
+}
+
+/* profile image */
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border: 3px solid #000;
+    object-fit: cover;
+}
+
+/* page title styling */
+.shop-title {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 2.5rem;
+    color: #d81b60;
+}
+
+/* blinking text effect used for emphasis */
+.blink { 
+    animation: blinker 1s linear infinite; 
+    color: #d81b60; 
+    font-weight: bold; 
+    font-family: monospace;
+    margin-top: 5px;
+}
+
+/* blink animation keyframe */
+@keyframes blinker { 50% { opacity: 0; } }
+
+
+/* =========================
+   BENTO GRID SYSTEM
+   =========================
+   Core layout system for this page.
+
+   Used to arrange:
+   - videos (main content)
+   - images (products / visuals)
+   - text (context / reflection)
+
+   Each block is flexible and modular.
+*/
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 200px;
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* base styling for all grid items */
+.bento-item {
+    background: #fff;
+    border: 3px solid #000;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+
+/* VIDEO BLOCK — main featured media section */
+.video-box { 
+    grid-column: span 2; 
+    grid-row: span 2; 
+}
+
+/* ensures video fills entire box properly */
+.video-box video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* INFO BLOCK — highlighted text section */
+.info-box { 
+    grid-column: span 2; 
+    padding: 25px; 
+    background: #64ffda; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* IMAGE BLOCK — product / visual content */
+.image-box img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block;
+}
+
+
+/* TEXT BLOCK — high contrast info panel */
+.text-rectangle {
+    grid-column: span 2;
+    background: #000;
+    color: #b2ff59;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    font-family: monospace;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+
+/* INVENTORY GRID — product gallery section */
+.inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+/* individual product card */
+.item-card {
+    background: #fff;
+    border: 3px solid #000;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+
+/* product image fill */
+.item-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* FOOTER — closing section of page */
+.shop-footer {
+    margin-top: 30px;
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid #000;
+    background: #fff;
+    box-shadow: 5px 5px 0px #d81b60;
+}
+
+/* footer text styling */
+.shop-footer p {
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    letter-spacing: 1px;
+}
+
+/* small stat/info highlight box */
+.stat-box { 
+    background: #b2ff59; 
+    padding: 15px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    text-align: center;
+}

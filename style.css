@@ -1,0 +1,474 @@
+/* =========================================================
+   Y2K DESKTOP SCRAPBOOK HOME PAGE
+   =========================================================
+   This homepage is inspired by Y2K web aesthetics, early MySpace,
+   Carrd layouts, and Neocities personal websites.
+
+   I designed it to feel like a nostalgic desktop interface with
+   pink/green colour themes, playful layouts, and layered visuals.
+
+   I also added my own “Sean twist” by creating custom UI elements,
+   learning from tutorials, and designing parts like tapes, overlays,
+   and app-style navigation icons.
+
+   The goal was to make it feel comfortable, expressive, and personal
+   — like a digital scrapbook of my identity and creativity.
+========================================================= */
+
+
+/* RESET — removes default spacing so layout stays fully controlled and aligned */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* BODY — locks page height and uses soft rounded Y2K-inspired typography */
+body {
+    height: 100vh;
+    font-family: 'Arial Rounded MT Bold', sans-serif;
+
+    /* Prevents full-page scroll for desktop-style interface feel */
+    overflow: hidden; 
+}
+
+
+/* SITE WRAPPER — splits sidebar and content like a retro desktop system */
+.site-wrapper {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+
+/* SIDEBAR — pink Y2K navigation bar inspired by early web aesthetics */
+.sidebar-container {
+    width: 240px;
+    height: 100vh;
+    background-color: #d61d67;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 0;
+    flex-shrink: 0; 
+}
+
+
+/* LOGO WRAPPER — keeps branding centred like nostalgic homepage headers */
+.logo-wrapper { width: 80%; margin-bottom: 20px; }
+
+
+/* SIDEBAR LOGO — scales logo cleanly for consistent retro UI presentation */
+.sidebar-logo { width: 100%; height: auto; }
+
+
+/* NAV CONTAINER — organizes navigation like old desktop-style side menus */
+.nav-container {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 245px;
+}
+
+
+/* NAV GROUP — clusters buttons like Neocities/Carrd inspired navigation blocks */
+.nav-group { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+
+
+/* NAV PILL — bright gradient buttons inspired by Y2K internet UI style */
+.nav-pill {
+    width: 70%; 
+    padding: 10px 0;
+    text-align: center;
+    background: linear-gradient(to right, #ccff90, #99ff33, #33ffcc); 
+    border: 1px solid #ffffff;
+    border-radius: 50px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+
+/* CONTENT AREA — main scrollable section styled like a personal homepage */
+.content-area { 
+    flex: 1;
+    height: 100vh;
+
+    /* Polka dot background creates playful Y2K scrapbook atmosphere */
+    background-image: url("portfoliopic/polkadotbg.png"); 
+    background-repeat: repeat;
+
+    /* Only content scrolls while sidebar stays fixed like desktop UI */
+    overflow-y: auto; 
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 45px 20px 20px 20px; 
+}
+
+
+/* SLIDESHOW WRAPPER — homepage feature banner showcasing key visuals */
+.slideshow-wrapper {
+    position: relative;
+    width: 98%;
+    max-width: 1350px;
+    flex-shrink: 0;
+    margin-bottom: 25px;
+}
+
+
+/* IMAGE CONTAINER — holds slideshow images like early web galleries */
+.image-container { width: 100%; position: relative; }
+
+
+/* SLIDE IMAGE — ensures images scale cleanly in responsive layout */
+.slide { width: 100%; height: auto; display: block; border-radius: 8px; }
+
+
+/* HIDDEN — toggles visibility between slideshow images via JavaScript */
+.hidden { display: none; }
+
+
+/* SIDE ARROWS — navigation buttons for interactive slideshow control */
+.side-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 15px 10px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 5;
+    border-radius: 4px;
+}
+
+
+/* LEFT ARROW — positioned for intuitive slideshow navigation */
+.left-arrow { left: 15px; }
+
+
+/* RIGHT ARROW — positioned for intuitive slideshow navigation */
+.right-arrow { right: 15px; }
+
+
+/* DOT CONTAINER — visual navigation indicators like retro web UI */
+.dot-container { text-align: center; margin-top: 10px; margin-bottom: 10px; }
+
+
+/* DOT — small indicators showing current slideshow position */
+.dot { height: 12px; width: 12px; margin: 0 5px; background-color: #bbb; border-radius: 50%; display: inline-block; cursor: pointer; }
+
+
+/* ACTIVE DOT — highlights current slide using green Y2K accent */
+.dot.active { background-color: #4CAF50; }
+
+
+/* APP GRID — desktop-style shortcuts inspired by MySpace and Neocities */
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    width: 90%;
+    max-width: 850px;
+    margin-top: 15px;
+    margin-bottom: 40px;
+    flex-shrink: 0;
+}
+
+
+/* APP ITEM — clickable icons linking pages like a retro desktop system */
+.app-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+
+/* APP IMAGE — styled like nostalgic desktop icons with rounded UI feel */
+.app-item img {
+    width: 75px;
+    height: 75px;
+    border-radius: 15px;
+    object-fit: cover;
+    margin-bottom: 8px;
+}
+
+
+/* APP LABEL — text styled like early internet desktop shortcuts */
+.app-label {
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.3);
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+
+/* HOVER EFFECT — adds playful interaction like early web UI feedback */
+.app-item:hover { transform: scale(1.1); }
+
+
+/* OFFSET DOWN — adds playful asymmetry like scrapbook-style layouts */
+.offset-down { transform: translateY(15px); }
+
+
+/* OFFSET UP — creates layered visual movement for dynamic composition */
+.offset-up { transform: translateY(-8px); }
+
+
+/* FADE ANIMATION — smooth transition between slideshow images */
+.fade { animation: fadeEffect 0.5s; }
+
+
+/* KEYFRAME FADE — soft transition inspired by nostalgic UI motion */
+@keyframes fadeEffect { from {opacity: 0.4} to {opacity: 1} }
+
+
+/* GLIMPSES SECTION — scrapbook showcase inspired by Neocities layouts */
+.glimpses-section {
+    margin-top: 20px;
+    padding: 30px 20px 100px 20px; 
+    width: 95%;
+    max-width: 1200px;
+    border-top: 1px dashed rgba(214, 29, 103, 0.2); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* GLIMPSES TITLE — bold stylized header using retro-pop shadow and lime fill */
+.glimpses-title {
+    font-family: 'Arial Rounded MT Bold', sans-serif;
+    font-size: 16px;
+    color: #333;
+    background: #ccff90;
+    padding: 6px 22px;
+    border-radius: 50px;
+    text-transform: lowercase;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+    display: inline-block;
+    border: 2px solid #000;
+    box-shadow: 6px 6px 0px #d61d67;
+}
+
+
+/* SCRAPBOOK ROW — organizes visual content into side-by-side spreads */
+.scrapbook-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+
+/* VIDEO SPREAD — frame for video content styled like a physical photo mount */
+.video-spread {
+    flex: 1;
+    max-width: 550px;
+    background: #fff;
+    padding: 10px;
+    position: relative;
+    border: 8px solid #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+
+/* SCRAPBOOK VIDEO — keeps video content bordered and sharp like a TV monitor */
+.scrapbook-video {
+    width: 100%;
+    display: block;
+    border: 1px solid #000;
+}
+
+
+/* VIDEO CAPTION — typewriter-style text inspired by 90s scrapbook journaling */
+.video-caption {
+    font-family: 'Courier New', monospace;
+    text-align: right;
+    font-size: 11px;
+    margin-top: 8px;
+    color: #555;
+}
+
+
+/* COLLAGE SIDE — alignment wrapper for layered polaroid collections */
+.collage-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* COLLAGE GRID — controls the spacing between clustered scrapbook photos */
+.collage-grid {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+
+/* POLAROID — creates iconic photo frames with custom tilts for "messy" charm */
+.polaroid {
+    background: #fff;
+    padding: 8px 8px 25px 8px;
+    border: 1px solid #eee;
+    box-shadow: 6px 6px 15px rgba(0,0,0,0.1);
+    width: 170px;
+    transform: rotate(3deg);
+}
+
+
+/* ROTATE LEFT — counter-rotation to add variety to polaroid arrangements */
+.rotate-left { transform: rotate(-5deg); }
+
+
+/* POLAROID IMAGE — ensures photos fit perfectly inside the nostalgic frames */
+.polaroid img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+}
+
+
+/* COLLAGE CAPTION — text container for journaling-style photo descriptions */
+.collage-caption {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+/* COLLAGE TEXT — italicized typewriter font for an authentic scrapbook vibe */
+.collage-caption p {
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    color: #464a40;
+    line-height: 1.4;
+    max-width: 300px;
+    font-style: italic;
+}
+
+
+/* ART SHOWCASE TITLE — vibrant teal header to separate creative project areas */
+.art-showcase-title {
+    font-family: 'Arial Rounded MT Bold', sans-serif;
+    font-size: 16px;
+    color: #333;
+    background: #33ffcc; 
+    padding: 6px 22px;
+    border-radius: 50px;
+    text-transform: lowercase;
+    letter-spacing: 3px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    display: inline-block;
+    border: 2px solid #000;
+    box-shadow: 6px 6px 0px #d61d67;
+}
+
+
+/* LANDSCAPE FEATURE — container for wide creative work presentations */
+.landscape-feature {
+    width: 100%;
+    max-width: 950px;
+    position: relative;
+    margin-top: 20px;
+}
+
+
+/* BIG LANDSCAPE IMAGE — adds a dashed border for a DIY cut-out aesthetic */
+.big-landscape-img {
+    width: 100%;
+    height: auto;
+    border: 1px dashed rgba(214, 29, 103, 0.2);
+    border-radius: 15px;
+    padding: 8px;
+    background: transparent;
+}
+
+
+/* TAPE — custom UI elements made to look like decorative washi tape */
+.tape {
+    position: absolute;
+    background: rgba(204, 255, 144, 0.6);
+    width: 80px;
+    height: 25px;
+    z-index: 10;
+}
+
+
+/* TAPE TOP — centres tape at the top of an element like a stuck poster */
+.tape-top { top: -12px; left: 50%; transform: translateX(-50%) rotate(-2deg); }
+
+
+/* TAPE CORNER L — adds decorative diagonal tape to the left corner */
+.tape-corner-l { top: -10px; left: -15px; transform: rotate(-45deg); }
+
+
+/* TAPE CORNER R — adds decorative diagonal tape to the right corner */
+.tape-corner-r { top: -10px; right: -15px; transform: rotate(45deg); }
+
+
+/* STICKY MARQUEE — scrolling banner inspired by early 2000s web animations */
+.sticky-marquee {
+    position: fixed;
+    bottom: 0;
+    left: 240px; 
+    width: calc(100% - 240px);
+    background: #ccff90; 
+    color: #333; 
+    padding: 6px 0; 
+    overflow: hidden;
+    white-space: nowrap;
+    z-index: 1000;
+    border-top: 3px solid #d61d67; 
+    display: flex;
+    align-items: center;
+}
+
+
+/* MARQUEE CONTENT — powers the infinite scrolling motion of footer text */
+.marquee-content {
+    display: flex;
+    align-items: center;
+    animation: scroll-left 25s linear infinite;
+}
+
+
+/* MARQUEE PIXEL — scales pixel art icons for sharp retro footer visuals */
+.marquee-pixel {
+    height: 30px; 
+    width: auto;
+    margin: 0 30px;
+    image-rendering: pixelated; 
+}
+
+
+/* MARQUEE TEXT — bold rounded typography for a professional yet playful vibe */
+.marquee-content span {
+    font-family: 'Arial Rounded MT Bold', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+/* SCROLL LEFT KEYFRAME — defines the smooth horizontal loop animation */
+@keyframes scroll-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
